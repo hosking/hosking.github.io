@@ -4,7 +4,7 @@
  <title>Tony Hosking</title>
  <link href="http://hosking.github.io/" rel="self"/>
  <link href="http://hosking.github.io"/>
- <updated>2015-05-28T06:18:47-04:00</updated>
+ <updated>2015-07-14T21:14:29+10:00</updated>
  <id>http://hosking.github.io</id>
  <author>
    <name>Antony Hosking</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>Jekyll Introduction</title>
    <link href="http://hosking.github.io/lessons/2011/12/29/jekyll-introduction"/>
-   <updated>2011-12-29T00:00:00-05:00</updated>
+   <updated>2011-12-29T00:00:00+11:00</updated>
    <id>http://hosking.github.io/lessons/2011/12/29/jekyll-introduction</id>
    <content type="html">
 &lt;p&gt;This Jekyll introduction will outline specifically  what Jekyll is and why you would want to use it.
