@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title></title>
+    <title>Writing An Abstract</title>
     
     <meta name="author" content="Antony Hosking">
 
@@ -358,62 +358,164 @@
       </nav>
 
       <div class="container">
-        <html>
-<head></head>
-<body>
-  <h2>Open Nesting in Software Transactional Memory</h2>
-  <h5>Ni, Yang and Menon, Vijay and Adl-Tabatabai, Ali-Reza and Hosking, Antony L. and Hudson, Richard L. and Moss, J. Eliot B. and Saha, Bratin and Shpeisman, Tatiana</h5>
+        
+<div class="page-header">
+  <h1>Writing An Abstract <small>How to construct a <i>Nature</i> summary paragraph</small></h1>
+</div>
+
+<div class="row post-full">
+  <div class="col-xs-12">
+    <div class="date">
+      <span>23 July 2015</span>
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <p><g:plusone></g:plusone></p>
+    </div>
+    <div class="content">
+      <p>Here is a useful guide to writing an abstract.</p>
+
+<p>Annotated example taken from the <a href="http://www.nature.com/nature/authors/gta"><em>Nature</em> Guide to
+Authors</a>.</p>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="bg-info">
+      One or two sentences providing a <b>basic introduction</b> to the field,
+      comprehensible to a scientist in any discipline.
+    </div>
+    <div class="bg-warning">
+      Two to three sentences of <b>more detailed background</b>, comprehensible
+      to scientists in related disciplines.
+    </div>
+    <div class="bg-danger">
+      One sentence clearly stating the <b>general problem</b> being addressed by
+      this particular study.
+    </div>
+    <div class="bg-success">
+      One sentence summarizing the main result (with the words &ldquo;<b>here we
+      show</b>&rdquo; or their equivalent).
+    </div>
+    <div class="bg-info">
+      Two or three sentences explaining what the <b>main result</b> reveals in
+      direct comparison to what was thought to be the case previously, or how
+      the main result adds to previous knowledge.
+    </div>
+    <div class="bg-warning">
+      One or two sentences to put the results into a more <b>general
+      context</b>.
+    </div>
+    <div class="bg-danger">
+      Two or three sentences to provide a <b>broader perspective</b>, readily
+      comprehensible to a scientist in any discipline, may be included in
+      the first paragraph if the editor considers that the accessibility of
+      the paper is significantly enhanced by their inclusion. Under these
+      circumstances, the length of the paragraph can be up to 300
+      words. (This example is 190 words without the final section, and 250
+      words with it.)
+    </div>
+    
+  </div>
+  <div class="col-sm-6">
+    <span class="bg-info">
+      During cell division, mitotic spindles are assembled by microtubule
+      based motor proteins<sup>1,2</sup>.
+    </span>
+    <span class="bg-warning">
+      The bipolar organization of spindles is essential for proper segregation
+      of chromosomes, and requires plus-end-directed homotetrameric motor
+      proteins of the widely conserved kinesin-5 (BimC)
+      family<sup>3</sup>. Hypotheses for bipolar spindle formation include the
+      &lsquo;push-pull mitotic muscle&rsquo; model, in which kinesin-5 and
+      opposing motor proteins act between overlapping
+      microtubules<sup>2,4,5</sup>.
+    </span>
+    <span class="bg-danger">
+      However, the precise roles of kinesin-5 during this process are unknown.
+    </span>
+    <span class="bg-success">
+      Here we show that the vertebrate kinesin-5 Eg5 drives the sliding of
+      microtubules depending on their relative orientation.
+    </span>
+    <span class="bg-info">
+      We found in controlled <i>in vitro</i> assays that Eg5 has the remarkable
+      capability of simultaneously moving at ~20 nm s<sup>-1</sup> towards the
+      plus-ends of each of the two microtubules it crosslinks. For anti-parallel
+      microtubules, this results in relative sliding at ~40 nm s<sup>-1</sup>,
+      comparable to spindle pole separation rates <i>in vivo</i><sup>6</sup>.
+      Furthermore, we found that Eg5 can tether microtubule plus-ends,
+      suggesting an additional microtubule-binding mode for Eg5.
+    </span>
+    <span class="bg-warning">
+      Our results demonstrate how members of the kinesin-5 family are likely to
+      function in mitosis, pushing apart interpolar microtubules as well as
+      recruiting microtubules into bundles that are subsequently polarized by
+      relative sliding.
+    </span>
+    <span class="bg-danger">
+      We anticipate our assay to be a starting point for more sophisticated
+      <i>in vitro</i> models of mitotic spindles. For example, the individual
+      and combined action of multiple mitotic motors could be tested,
+      including minus-end-directed motors opposing Eg5 motility. Furthermore,
+      Eg5 inhibition is a major target of anti-cancer drug development, and a
+      well-defined and quantitative assay for motor function will be relevant
+      for such developments.
+    </span>
+  </div>
+</div>
+
+    </div>
+
   
+    <ul class="tag_box inline">
+      <li><i class="glyphicon glyphicon-open"></i></li>
+      
+      
+
+
   
-  <h4>Abstract</h4>
-  <p>Transactional memory (TM) promises to simplify concurrent
-                  programming while providing scalability competitive to
-                  fine-grained locking. Language-based constructs allow
-                  programmers to denote atomic regions declaratively and to
-                  rely on the underlying system to provide transactional
-                  guarantees along with concurrency. In contrast with
-                  fine-grained locking, TM allows programmers to write simpler
-                  programs that are composable and deadlock-free.<p> TM
-                  implementations operate by tracking loads and stores to
-                  memory and by detecting concurrent conflicting accesses by
-                  different transactions. By automating this process, they
-                  greatly reduce the programmer’s burden, but they also are
-                  forced to be conservative. In certain cases, conflicting
-                  memory accesses may not actually violate the higher-level
-                  semantics of a program, and a programmer may wish to allow
-                  seemingly conflicting transactions to execute
-                  concurrently.<p> <em>Open nested transactions</em> enable
-                  expert programmers to differentiate between physical
-                  conflicts, at the level of memory, and logical conflicts
-                  that actually violate application semantics. A TM system
-                  with open nesting can permit physical conflicts that are not
-                  logical conflicts, and thus increase concurrency among
-                  application threads.<p> Here we present an implementation of
-                  open nested transactions in a Java-based software
-                  transactional memory (STM) system. We describe new language
-                  constructs to support open nesting in Java, and we discuss
-                  new abstract locking mechanisms that a programmer can use to
-                  prevent logical conflicts. We demonstrate how these
-                  constructs can be mapped efficiently to existing STM data
-                  structures. Finally, we evaluate our system on a set of Java
-                  applications and data structures, demonstrating how open
-                  nesting can enhance application scalability.</p>
+     
+    	<li><a href="/categories.html#lessons-ref">
+    		lessons <span>1</span>
+    	</a></li>
+    
   
-  <pre>@inproceedings{Ni+2007PPoPP,
-  author = {Ni, Yang and Menon, Vijay and Adl-Tabatabai, Ali-Reza and Hosking, Antony L. and Hudson, Richard L. and Moss, J. Eliot B. and Saha, Bratin and Shpeisman, Tatiana},
-  title = {Open Nesting in Software Transactional Memory},
-  booktitle = {ACM SIGPLAN Symposium on Principles and Practice of Parallel
-                    Programming},
-  year = {2007},
-  pages = {68--78},
-  month = {March},
-  address = {San Jose, California},
-  doi = {10.1145/1229428.1229442},
-  acm = {http://dl.acm.org/authorize?N93662}
-}
-</pre>
-</body>
-</html>
+
+
+    </ul>
+    
+
+  
+    <ul class="tag_box inline">
+      <li><i class="glyphicon glyphicon-tags"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/tags.html#writing-ref">writing <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  
+    <hr>
+    <ul class="pagination">
+    
+      <li class="prev disabled"><a>&larr; Previous</a></li>
+    
+      <li><a href="/archive.html">Archive</a></li>
+    
+      <li class="next disabled"><a>Next &rarr;</a>
+    
+    </ul>
+    <hr>
+    
+  </div>
+</div>
+
 
       </div>
 

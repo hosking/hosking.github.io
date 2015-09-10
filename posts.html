@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title></title>
+    <title>Posts</title>
     
     <meta name="author" content="Antony Hosking">
 
@@ -96,7 +96,7 @@
     
       
       	
-      	<li><a href="/posts.html">Posts</a></li>
+      	<li class="active"><a href="/posts.html" class="active">Posts</a></li>
       	
       
     
@@ -358,62 +358,22 @@
       </nav>
 
       <div class="container">
-        <html>
-<head></head>
-<body>
-  <h2>Open Nesting in Software Transactional Memory</h2>
-  <h5>Ni, Yang and Menon, Vijay and Adl-Tabatabai, Ali-Reza and Hosking, Antony L. and Hudson, Richard L. and Moss, J. Eliot B. and Saha, Bratin and Shpeisman, Tatiana</h5>
+        
+<div class="page-header">
+  <h1>Posts </h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="posts">
   
+    <li><span>23 Jul 2015</span> &raquo; <a href="/lessons/2015/07/23/writing-an-abstract">Writing An Abstract</a></li>
   
-  <h4>Abstract</h4>
-  <p>Transactional memory (TM) promises to simplify concurrent
-                  programming while providing scalability competitive to
-                  fine-grained locking. Language-based constructs allow
-                  programmers to denote atomic regions declaratively and to
-                  rely on the underlying system to provide transactional
-                  guarantees along with concurrency. In contrast with
-                  fine-grained locking, TM allows programmers to write simpler
-                  programs that are composable and deadlock-free.<p> TM
-                  implementations operate by tracking loads and stores to
-                  memory and by detecting concurrent conflicting accesses by
-                  different transactions. By automating this process, they
-                  greatly reduce the programmer’s burden, but they also are
-                  forced to be conservative. In certain cases, conflicting
-                  memory accesses may not actually violate the higher-level
-                  semantics of a program, and a programmer may wish to allow
-                  seemingly conflicting transactions to execute
-                  concurrently.<p> <em>Open nested transactions</em> enable
-                  expert programmers to differentiate between physical
-                  conflicts, at the level of memory, and logical conflicts
-                  that actually violate application semantics. A TM system
-                  with open nesting can permit physical conflicts that are not
-                  logical conflicts, and thus increase concurrency among
-                  application threads.<p> Here we present an implementation of
-                  open nested transactions in a Java-based software
-                  transactional memory (STM) system. We describe new language
-                  constructs to support open nesting in Java, and we discuss
-                  new abstract locking mechanisms that a programmer can use to
-                  prevent logical conflicts. We demonstrate how these
-                  constructs can be mapped efficiently to existing STM data
-                  structures. Finally, we evaluate our system on a set of Java
-                  applications and data structures, demonstrating how open
-                  nesting can enhance application scalability.</p>
-  
-  <pre>@inproceedings{Ni+2007PPoPP,
-  author = {Ni, Yang and Menon, Vijay and Adl-Tabatabai, Ali-Reza and Hosking, Antony L. and Hudson, Richard L. and Moss, J. Eliot B. and Saha, Bratin and Shpeisman, Tatiana},
-  title = {Open Nesting in Software Transactional Memory},
-  booktitle = {ACM SIGPLAN Symposium on Principles and Practice of Parallel
-                    Programming},
-  year = {2007},
-  pages = {68--78},
-  month = {March},
-  address = {San Jose, California},
-  doi = {10.1145/1229428.1229442},
-  acm = {http://dl.acm.org/authorize?N93662}
-}
-</pre>
-</body>
-</html>
+</ul>
+
+  </div>
+</div>
+
 
       </div>
 

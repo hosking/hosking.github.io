@@ -4,6 +4,7 @@ http://hosking.github.io/atom.xml
 http://hosking.github.io/categories.html
 http://hosking.github.io/index.html
 http://hosking.github.io/pages.html
+http://hosking.github.io/posts.html
 http://hosking.github.io/projects.html
 http://hosking.github.io/pubs.html
 http://hosking.github.io/rss.xml
@@ -105,4 +106,4 @@ http://hosking.github.io/bibliography/Hosking1991GC.html
 http://hosking.github.io/bibliography/Hosking+1990POS.html
 http://hosking.github.io/bibliography/Hosking+1990TR.html
 
-http://hosking.github.io/lessons/2011/12/29/jekyll-introduction
+http://hosking.github.io/lessons/2015/07/23/writing-an-abstract
