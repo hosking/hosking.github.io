@@ -1,11 +1,13 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title></title>
+    <title>Draining the Swamp: Micro Virtual machines as Solid
+                  Foundation for Language Development</title>
     
     <meta name="author" content="Antony Hosking">
 
@@ -96,7 +98,7 @@
     
       
       	
-      	<li><a href="/posts.html">Posts</a></li>
+      	<li><a href="/posts">Posts</a></li>
       	
       
     
@@ -104,7 +106,7 @@
     
       
       	
-      	<li><a href="/projects.html">Projects</a></li>
+      	<li><a href="/projects">Projects</a></li>
       	
       
     
@@ -112,19 +114,7 @@
     
       
       	
-      	<li><a href="/pubs.html">Publications</a></li>
-      	
-      
-    
-  
-    
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/service.html">Service</a></li>
+      	<li><a href="/pubs">Publications</a></li>
       	
       
     
@@ -135,200 +125,418 @@
   
     
       
-    
-  
-    
-      
       	
-      	<li><a href="/teaching.html">Teaching</a></li>
+      	<li><a href="/service">Service</a></li>
       	
       
     
   
     
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/teaching">Teaching</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
     
+      
+    
   
+    
+      
     
   
 
@@ -375,32 +583,33 @@
                   becoming more complicated. An important reason for this
                   brokenness is that much of language design is
                   implementation-driven. The difficulties in implementation
-                  and insufficient understanding of concepts bake bad
-                  designs into the language itself. Concurrency, architectural
-                  details and garbage collection are three fundamental
-                  concerns that contribute much to the complexities of
-                  implementing managed languages.  <p> We propose the
-                  <em>micro virtual machine</em>, a thin abstraction designed
-                  specifically to relieve implementers of managed languages of
-                  the most fundamental implementation challenges that
-                  currently impede good design. The micro virtual machine
-                  targets abstractions over memory (garbage collection),
-                  architecture (compiler backend), and concurrency. We
-                  motivate the micro virtual machine and give an account of
-                  the design and initial experience of a concrete instance,
-                  which we call Mu, built over a two year period. Our goal is
-                  to remove an important barrier to performant and
-                  semantically sound managed language design and
-                  implementation.</p>
+                  and insufficient understanding of concepts bake bad designs
+                  into the language itself. Concurrency, architectural details
+                  and garbage collection are three fundamental concerns that
+                  contribute much to the complexities of implementing managed
+                  languages.  <p> We propose the <em>micro virtual
+                  machine</em>, a thin abstraction designed specifically to
+                  relieve implementers of managed languages of the most
+                  fundamental implementation challenges that currently impede
+                  good design. The micro virtual machine targets abstractions
+                  over memory (garbage collection), architecture (compiler
+                  backend), and concurrency. We motivate the micro virtual
+                  machine and give an account of the design and initial
+                  experience of a concrete instance, which we call Mu, built
+                  over a two year period. Our goal is to remove an important
+                  barrier to performant and semantically sound managed
+                  language design and implementation.</p>
   
   <pre>@inproceedings{Wang+2015SNAPL,
   author = {Wang, Kunshan and Lin, Yi and Blackburn, Stephen M. and Norrish, Michael and Hosking, Antony L.},
   title = {Draining the Swamp: Micro Virtual machines as Solid
                     Foundation for Language Development},
   booktitle = {Inaugural Summit on Advances in Programming Languages},
-  year = {2015},
   series = {SNAPL},
+  editor = {Ball, Thomas and Bod{\'i}k, Rastislav and Krishnamurthi, Shriram and Lerner, Benjamin S. and Morrisett, Greg},
+  year = {2015},
   month = {May},
+  pages = {321-336},
   address = {Asilomar, California},
   doi = {10.4230/LIPIcs.SNAPL.2015.321}
 }
@@ -414,7 +623,7 @@
 
     <div id="footer">
       <div class="container">
-        <p>&copy; 2015 Antony Hosking
+        <p>&copy; 2016 Antony Hosking
           with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
           and <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>
         </p>
@@ -434,3 +643,6 @@
   </body>
 </html>
 
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
