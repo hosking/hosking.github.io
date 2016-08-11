@@ -1,0 +1,641 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Nested Transactional Memory: Model and Architecture
+                  Sketches</title>
+    
+    <meta name="author" content="Antony Hosking">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap styles -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Sticky Footer -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Academic Icons -->
+    <link href="/assets/themes/bootstrap-3/academicons_v1/academicons.css" rel="stylesheet">
+    <link href="/assets/themes/bootstrap-3/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div id="wrap">
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <i class="fa fa-bars"></i>
+          </button>
+          <div class="col-xs-3 col-lg-3">
+            <img src="/img/profile-picture.png" 
+                 class="img-circle"
+                 style="width:56px;border:2px solid rgba(255,255,255,0.75)">
+          </div>
+          <a class="navbar-brand" href="/">Tony Hosking</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+            
+
+
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/posts">Posts</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/projects">Projects</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pubs">Publications</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/service">Service</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/teaching">Teaching</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+
+          </ul>
+          <div class="nav navbar-nav btn-group">
+            <a class="btn btn-default navbar-btn fa fa-lg fa-envelope-square" href="mailto:antony.hosking@gmail.com"></a>
+            <a class="btn btn-default navbar-btn fa fa-lg fa-phone-square" href="tel:17654163068"></a>
+            <a class="btn btn-default navbar-btn fa fa-lg fa-mobile" href="tel:61468302825"></a>
+            <a class="btn btn-default navbar-btn ai fa-lg ai-google-scholar-square" href="https://scholar.google.com/citations?user=5LINiuEAAAAJ"></a>
+            <a class="btn btn-default navbar-btn fa fa-lg fa-google-plus-square" href="https://plus.google.com/+AntonyHosking"></a>
+            <a class="btn btn-default navbar-btn fa fa-lg fa-linkedin-square" href="https://www.linkedin.com/in/hosking"></a>
+            <a class="btn btn-default navbar-btn fa fa-lg fa-twitter-square" href="https://twitter.com/antonyhosking"></a>
+            <a class="btn btn-default navbar-btn fa fa-lg fa-github-square" href="https://github.com/hosking"></a>
+            <a class="btn btn-default navbar-btn fa fa-lg fa-bitbucket-square" href="https://bitbucket.com/hosking"></a>
+          </div>
+<!--
+          <form class="navbar-form navbar-right" role="social">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+-->
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="container">
+        <html>
+<head></head>
+<body>
+  <h2>Nested Transactional Memory: Model and Architecture
+                  Sketches</h2>
+  <h5>Moss, J. Eliot B. and Hosking, Antony L.</h5>
+  
+  
+  <h4>Abstract</h4>
+  <p>We offer a reference model for nested transactions at the
+                  level of memory accesses, and sketch possible hardware
+                  architecture designs that implement that model. We describe
+                  both closed and open nesting. The model is abstract in that
+                  it does not relate to hardware, such as caches, but
+                  describes memory as seen by each transaction, memory access
+                  conflicts, and the effects of commits and aborts. The
+                  hardware sketches describe approaches to implementing the
+                  model using bounded size caches in a processor with
+                  overflows to memory. In addition to a model that will
+                  support concurrency within a transaction, we describe a
+                  simpler model that we call <em>linear nesting</em>. Linear
+                  nesting supports only a single thread of execution in a
+                  transaction nest, but may be easier to implement. While we
+                  hope that the model is a good target to which to compile
+                  transactions from source languages, the mapping from source
+                  constructs to nested transactional memory is beyond the
+                  scope of the paper.</p>
+  
+  <pre>@article{Moss+2006SCP,
+  author = {Moss, J. Eliot B. and Hosking, Antony L.},
+  title = {Nested Transactional Memory: Model and Architecture
+                    Sketches},
+  journal = {Science of Computer Programming},
+  year = {2006},
+  volume = {63},
+  pages = {186--201},
+  month = {December},
+  doi = {10.1016/j.scico.2006.05.010},
+  gscholar = {150}
+}
+</pre>
+</body>
+</html>
+
+      </div>
+
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p>&copy; 2016 Antony Hosking
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>
+        </p>
+      </div>
+    </div>
+
+    
+
+
+
+
+
+    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
